@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查看管理员信息</title>
+</head>
+
+<style>
+
+    form {
+        display: inline-block;
+    }
+
+</style>
+<body>
+
+<form method="post" action="/LoginIn">
+    <input type="submit" value="返回">
+</form>
+
+<form method="post" action="/ToAddadmin">
+    <input type="submit" value="新增管理员">
+</form>
+    <table>
+
+
+
+
+
+        <table>
+            <thead>
+            <tr>
+                <th>id</th>
+
+                <th>name</th>
+
+            </tr>
+            </thead>
+
+            <tr th:each="admin:${admins}">
+                <td th:text="${admin.id}"></td>
+                <td th:text="${admin.name}"></td>
+                <td><a th:href="@{'/delete_admin/' + ${admin.id}}">删除</a> </td>
+                <td><a th:href="@{'/to_change_admin/' + ${admin.id}}">更改</a> </td>
+            </tr>
+
+        </table>
+    </table>
+</body>
+</html>

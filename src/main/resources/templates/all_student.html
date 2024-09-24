@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+
+</head>
+<body>
+我爱学生
+
+<div id="stu"> <input type="button" @click="check" value="提取">
+<br>
+    {{datas}}
+
+</div>
+</body>
+
+<script>
+    new Vue({
+        el:'#stu',
+        data:{
+            datas:"123"
+        },
+        methods:{
+            mounted:function(){
+                this.check();//需要触发的函数
+            },
+
+
+            check:function (){
+                var that = this;
+                console.log("sad");
+                axios.get("findOne/201932221004").then(function(response){
+                        console.log(response.data);
+                        that.datas = response.data;
+                    }
+                )}
+
+
+        }
+    })
+
+
+
+
+
+
+</script>
+</html>

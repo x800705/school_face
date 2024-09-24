@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.sc.mapper.MoneyMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.sc.entity.sm">
+        <result column="id" jdbcType="VARCHAR" property="id" />
+        <result column="money" jdbcType="DOUBLE" property="money" />
+    </resultMap>
+
+
+
+
+
+
+    <!--查询单条-->
+    <select id="findOne"  resultType="com.example.sc.entity.sm" >
+
+        select  * from sm where  id = #{id};
+
+    </select>
+
+
+</mapper>
+

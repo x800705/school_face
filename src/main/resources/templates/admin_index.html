@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>一卡通管理系统</title>
+    
+    <style>
+        body{
+            background-color: beige;
+        }
+
+        .title{
+            width: 100%;
+            height:60px;
+            background-color: RGB(195,195,195);
+            font-size: 40px;
+            font-family: "微软雅黑";
+            text-align: center;
+        }
+        
+    </style>
+</head>
+<body>
+
+<div class="title">校园一卡通管理系统</div>
+
+欢迎回来,
+<span th:text="${name.name}"></span>
+
+<br>
+
+
+<a href="/find_all_admin">查看管理员信息</a>
+<a href="/student/index.html">查看学生信息</a>
+<a href="/RemoveLogin">退出登录</a>
+
+<br>
+
+<table>
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>pwd</th>
+        <th>name</th>
+        <th>sex</th>
+    </tr>
+    </thead>
+
+
+</table>
+</body>
+</html>

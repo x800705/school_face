@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.sc.mapper.FaceMapper">
+
+    <resultMap id="BaseResultMap" type="com.example.sc.entity.face">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="is_use" jdbcType="INTEGER" property="is_use" />
+    </resultMap>
+
+
+
+
+
+
+    <!--查询单条-->
+    <select id="is_use"  resultType="com.example.sc.entity.face" >
+
+        select  * from faceid where  id = #{id};
+
+    </select>
+
+
+    <update id="pay">
+
+        update faceid set money=#{money},is_use=1 where id = #{id};
+
+    </update>
+
+
+    <update id="pay_over">
+
+        update faceid set money=0,is_use=0 where id = #{id};
+
+    </update>
+
+</mapper>
+

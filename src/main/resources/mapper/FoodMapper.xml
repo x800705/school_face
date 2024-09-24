@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 会以namespace 和 id 在mapper 中查询具体的方法
+         resultType 表示返回对象的数据类型
+         parameterType 表示传入的数据对象
+         id  唯一标识，要与命名空间（抽象方法）中定义的方法名称一致
+ -->
+
+<!-- 菜单查询 -->
+<mapper namespace="com.example.sc.mapper.FoodMapper">
+    <select id="search" resultType="Goods">
+        select * from food where name like #{name}'%'
+    </select>
+
+    <delete id="del">
+        delete from food where id = #{id}
+    </delete>
+
+
+    <select id="get_bill" resultType="Bill">
+
+        select * from food_bill
+
+         <if test="state != 'undefined' and state != '' ">  where state = #{state} </if>
+
+    </select>
+
+    <delete id="multi_del">
+        delete from food where id =
+            <foreach collection="ids"> {{ids}}</foreach>
+
+    </delete>
+
+
+
+</mapper>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="/find_all_admin" method="post">
+    <input type="submit" value="返回">
+</form>
+
+<br>
+修改管理员
+
+
+<form action="/change_admin" method="post">
+    账户:<input type="text" th:value="${change.id}" name="id" disabled> <br>
+    姓名:<input type="text" th:value="${change.name}" name="name"> <br>
+    密码:<input type="password" th:value="${change.pwd}" name="pwd">
+    <input type="submit" value="提交">
+
+</form>
+<br>
+
+
+</body>
+</html>
